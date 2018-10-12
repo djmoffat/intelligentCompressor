@@ -1,7 +1,7 @@
 classdef autocomp < audioPlugin
     properties (Constant)
     PluginInterface = audioPluginInterface( ...
-        'PluginName','AutoComp', 'VendorName','FAST Project - C4DM', 'VendorVersion','0.1',... %'InputChannels',4,'OutputChannels',4,...
+        'PluginName','AutoComp', 'VendorName','FAST Project - C4DM', 'VendorVersion','0.1',...
         'InputChannels',1, ...
         'OutputChannels',1, ...
         audioPluginParameter('bypass','DisplayName', 'bypass','Mapping', {'enum','on','off'}),...
@@ -15,7 +15,7 @@ classdef autocomp < audioPlugin
         ratio = 5;
         knee = 0;
     end
-    properties% (Access = private)
+    properties (Access = private)
         dRC;
         fs;
         time;
@@ -23,7 +23,6 @@ classdef autocomp < audioPlugin
         attack = 0.05;
         release = 0.2;
         gain = 0;
-%         Meter;
         crest;
         rms;
         buff = [];
